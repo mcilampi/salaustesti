@@ -47,7 +47,7 @@ salaKirja = {
 } 
 
 ### tällä koodilla voi luoda ylläpitäjän salasanan
-
+'''
 masterPass = input("Anna ylläpitäjän salasana: ")
 checkNumber = input("Anna tarkistenumero: ")
 hash(masterPass,checkNumber)
@@ -55,6 +55,7 @@ hash(masterPass,checkNumber)
 with open("masterpass.txt", "w") as mpass:
   mpass.write(hash(masterPass,checkNumber))
   mpass.close()
+'''
 ###
 
 

@@ -45,8 +45,6 @@ salaKirja = {
   "8" : "knnen n,mn,dwqm233232nn,mnn,nm,",
   "9" : "nlkklnnklsdfnin ,n,nnjnnnon"
 } 
-
-alkuValikko = True
 '''
 # tällä koodilla voi luoda ylläpitäjän salasanan
 masterPass = input("Anna ylläpitäjän salasana: ")
@@ -59,7 +57,7 @@ with open("masterpass.txt", "w") as mpass:
 '''
 # valitaan toiminto, joko luodaan uusi käyttäjä tai valitaan olemassaoleva
 while True:
-  while alkuValikko:
+  while True:
     print("")
     print("Choose 1) for existing user or 2) for creating a user.")
     valinta = input("Your choice: ")
@@ -113,34 +111,39 @@ while True:
       with open(f'{userChoice}.txt', 'r') as chosenUser:
           goodPass = chosenUser.read()
           chosenUser.close()
+          userNameOk = True
       break
     except:
-      print("No such username, pick another!")
-
-
-  while True:
-    try: 
-      passWord = int(input("Password: "))
+      print("")
+      print("No such username!")
+      userNameOk = False
       break
-    except:
-      print("Not a number!")
-      
-  with open(f'{userChoice}synty.txt', 'r') as chosenUserSynty:
-      goodDate = chosenUserSynty.read()
-      chosenUserSynty.close()
 
-  givenPassword = hash(passWord,goodDate)
-  if givenPassword == goodPass:
-    token = authenticator(goodDate)
-    print(token)
-    givenAuthToken = input("Enter authenticator token: ")
-    if givenAuthToken == token: 
-        print("Correct password!")
+  if userNameOk == True:
+
+    while True:
+      try: 
+        passWord = int(input("Password: "))
         break
-    else:
+      except:
+        print("Not a number!")
+
+    with open(f'{userChoice}synty.txt', 'r') as chosenUserSynty:
+        goodDate = chosenUserSynty.read()
+        chosenUserSynty.close()
+
+    givenPassword = hash(passWord,goodDate)
+    if givenPassword == goodPass:
+      token = authenticator(goodDate)
+      print(token)
+      givenAuthToken = input("Enter authenticator token: ")
+      if givenAuthToken == token: 
+          print("Correct password!")
+          break
+      else:
+          vaarinMeni()
+
+    else: 
         vaarinMeni()
 
-  else: 
-      vaarinMeni()
-
-print("Pääsit eteenpäin ohjelmassa")
+print("You made it forward!")

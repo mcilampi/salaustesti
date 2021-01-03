@@ -39,14 +39,15 @@ salaKirja = {
   "2" : "jdwiwei098hojnonoiniofnwe",
   "3" : "fwe   n89 9898 ehfhnlknklnk",
   "4" : "ln  wem,m,nnm,, jnnnoioidfv",
-  "5" : "äöäö åp    åååokpåjopasdasasdw",
+  "5" : "h8f9we h98h098hf90weh09c  jopasdasasdw",
   "6" : "mpqw  dqwnaew ",
   "7" : "fji ew 222 aa sda 9 dsadjl ",
   "8" : "knnen n,mn,dwqm233232nn,mnn,nm,",
   "9" : "nlkklnnklsdfnin ,n,nnjnnnon"
 } 
-'''
-# tällä koodilla voi luoda ylläpitäjän salasanan
+
+### tällä koodilla voi luoda ylläpitäjän salasanan
+
 masterPass = input("Anna ylläpitäjän salasana: ")
 checkNumber = input("Anna tarkistenumero: ")
 hash(masterPass,checkNumber)
@@ -54,7 +55,9 @@ hash(masterPass,checkNumber)
 with open("masterpass.txt", "w") as mpass:
   mpass.write(hash(masterPass,checkNumber))
   mpass.close()
-'''
+###
+
+
 # valitaan toiminto, joko luodaan uusi käyttäjä tai valitaan olemassaoleva
 while True:
   while True:
@@ -146,4 +149,4 @@ while True:
     else: 
         vaarinMeni()
 
-print("You made it forward!")
+print("Pääsit eteenpäin ohjelmassa")

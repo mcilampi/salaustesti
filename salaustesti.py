@@ -112,6 +112,8 @@ while True:
   # salataan salasan kuten sitä luodessa ja verrataan salattua muotoa tiedostossa olevaan
   # jos ok, pääsee eteenpäin
   while True:
+    userChoice = ""
+    goodPass = ""
     try:
       userChoice = input("Username: ")
       with open(f'{userChoice}.txt', 'r') as chosenUser:

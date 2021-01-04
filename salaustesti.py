@@ -1,6 +1,7 @@
 # Hannu Mäkilampi 2021
 
 from datetime import datetime
+from os import system
 
 # otetaan vastaan luku, luodaan aikaleima, kerrotaan se vastaanotetulla luvulla ja
 # palautetaan tulosta 6 ensimmäistä numeroa stringinä
@@ -62,10 +63,11 @@ with open("masterpass.txt", "w") as mpass:
 
 
 # valitaan toiminto, joko luodaan uusi käyttäjä tai valitaan olemassaoleva
+menuQuit = False
 while True:
   while True:
     print("")
-    print("Choose 1) for existing user or 2) for creating a user.")
+    print("Choose 1) for existing user, 2) for creating a user or 3) quit.")
     valinta = input("Your choice: ")
     if valinta == "2":
 
@@ -107,6 +109,14 @@ while True:
 
     elif valinta == "1":
       break
+
+    elif valinta == "3":
+      menuQuit = True
+      break
+  
+  if menuQuit == True:
+    print("Quitting program.")
+    quit()
 
   # kysytään käyttäjänimi ja salasana, avataan käyttäjänimen mukainen tiedosto
   # salataan salasan kuten sitä luodessa ja verrataan salattua muotoa tiedostossa olevaan

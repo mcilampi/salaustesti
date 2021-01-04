@@ -1,4 +1,8 @@
 # salaustesti
+
+Default master password:123123
+Default master check number: 1234
+
 A login / administrator login program written in Python as an exercise and for fun.
 
 You can log in as a user (option 1) or as an administrator (option 2). Admin can create users and set their passwords. 

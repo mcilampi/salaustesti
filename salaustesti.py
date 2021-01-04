@@ -1,3 +1,5 @@
+# Hannu Mäkilampi 2021
+
 from datetime import datetime
 
 # otetaan vastaan luku, luodaan aikaleima, kerrotaan se vastaanotetulla luvulla ja
